@@ -1,0 +1,31 @@
+@use 'modules/reset';
+@use 'modules/variables';
+
+.sass-paragraph {
+    background-color: variables.$paragraph-bg-color;
+    color: variables.$paragraph-text-color;
+    font-family: variables.$paragraph-font;
+    padding: 10px 10px;
+}
+
+.boxes {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.box {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 25%;
+    background-color: variables.$box-background;
+}
+
+.background {
+    width: 500px;
+    height: 500px;
+    background-image: url('../images/Menorca-50.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+}
