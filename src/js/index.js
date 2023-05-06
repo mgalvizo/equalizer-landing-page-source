@@ -1,3 +1,5 @@
+import '../scss/styles.scss';
+
 const onAppRender = () => {
     console.log('App rendered');
 };
