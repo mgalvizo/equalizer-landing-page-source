@@ -58,6 +58,7 @@ a.btn {
         background-color: variables.$very-light-gray;
 
         &:hover {
+            color: variables.$very-dark-gray;
             background-color: variables.$yellow;
         }
     }
