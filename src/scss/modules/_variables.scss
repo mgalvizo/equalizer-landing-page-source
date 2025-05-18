@@ -1,0 +1,19 @@
+@use "sass:color";
+
+// WEBSITE
+$website-font: "IBM Plex Sans", sans-serif;
+$max-content-width: 1110px;
+// COLORS
+$cyan: #66e2dc;
+$orange: #fa7453;
+$yellow: #ffb964;
+$very-light-gray: #fcfaf9;
+$very-dark-gray: #191826;
+$white: #fff;
+$black: #000;
+// IMAGES
+$bg-main-mobile: "/bg-main-mobile.png";
+$bg-main-tablet: "/bg-main-tablet.png";
+$bg-main-desktop: "/bg-main-desktop.png";
+$bg-pattern-1: "/bg-pattern-1.svg";
+$bg-pattern-2: "/bg-pattern-2.svg";

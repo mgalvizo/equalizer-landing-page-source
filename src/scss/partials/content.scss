@@ -1,0 +1,77 @@
+@use "sass:map";
+@use "../modules/variables";
+@use "../modules/maps";
+@use "../modules/mixins";
+
+.body__content {
+  @include mixins.bg-image(variables.$bg-main-mobile, 0 -250px);
+  overflow-x: hidden;
+}
+
+/*
+// T A B L E T - S M D E S K T O P
+// 620px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "tablet-sm-desktop")) {
+  .body__content {
+    position: relative;
+    @include mixins.bg-image(variables.$bg-main-tablet, -400px -250px);
+  }
+}
+
+/*
+// S M A L L   D E S K T O P
+// 768px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "small-desktop")) {
+  .body__content {
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 267px;
+      height: 400px;
+      background-color: transparent;
+      @include mixins.bg-image(variables.$bg-pattern-1);
+      background-size: cover;
+      transform: translate(33px, -33px);
+      content: "";
+    }
+  }
+}
+
+/*
+// S M D E S K T O P - L G D E S K T O P
+// 900px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "sm-lg-desktop")) {
+  .body__content {
+    @include mixins.bg-image(variables.$bg-main-desktop, -300px -300px);
+  }
+}
+
+/*
+// L A R G E D E S K T O P
+// 1024px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "large-desktop")) {
+}
+
+/*
+// L D E S K T O P - M A X
+// 1232px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "ld-max")) {
+  .body__content {
+    &::before {
+      width: 312px;
+      height: 468px;
+      transform: translate(0, -40px);
+    }
+  }
+}

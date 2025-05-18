@@ -1,0 +1,117 @@
+@use "sass:map";
+@use "../modules/variables";
+@use "../modules/maps";
+
+footer {
+  .stripe__content {
+    padding-top: map.get(maps.$padding, "medium");
+    padding-bottom: 80px;
+  }
+
+  .col-1 {
+    margin-bottom: map.get(maps.$margin, "xlarge");
+  }
+
+  .col-2 {
+    margin-bottom: calc(map.get(maps.$margin, "xlarge") * 2);
+  }
+
+  .social__media {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+
+    svg {
+      fill: variables.$very-dark-gray;
+      transition: fill 0.25s ease-in-out;
+    }
+
+    a:hover {
+      svg {
+        fill: variables.$orange;
+      }
+    }
+  }
+}
+
+/*
+// T A B L E T - S M D E S K T O P
+// 620px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "tablet-sm-desktop")) {
+  footer {
+    .stripe__content {
+      padding-top: 183px;
+      padding-bottom: 85px;
+    }
+
+    .cols {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .col-1 {
+      flex-basis: 100%;
+      margin-bottom: map.get(maps.$margin, "xlarge");
+    }
+
+    .col-2 {
+      flex-basis: 70%;
+      margin-bottom: 0;
+    }
+
+    .col-3 {
+      flex-basis: 30%;
+    }
+
+    .social__media {
+      justify-content: flex-end;
+    }
+  }
+}
+
+/*
+// S M D E S K T O P - L G D E S K T O P
+// 900px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "sm-lg-desktop")) {
+  footer {
+    .stripe__content {
+      padding-top: 202px;
+      padding-bottom: 91px;
+    }
+  }
+}
+
+/*
+// L A R G E D E S K T O P
+// 1024px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "large-desktop")) {
+  footer {
+    .cols {
+      justify-content: flex-start;
+    }
+
+    .col-1 {
+      margin-bottom: 0;
+      margin-right: 138px;
+      align-self: flex-start;
+    }
+
+    .col-3 {
+      margin-left: auto;
+    }
+
+    .col {
+      flex-basis: auto;
+    }
+  }
+}

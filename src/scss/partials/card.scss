@@ -1,0 +1,147 @@
+@use "sass:map";
+@use "../modules/variables";
+@use "../modules/maps";
+@use "../modules//mixins";
+
+.card {
+  transform: translateY(-50px);
+
+  &.stripe {
+    padding: 0;
+  }
+
+  .card__content {
+    color: variables.$very-light-gray;
+    background-color: variables.$orange;
+    border-radius: map.get(maps.$card, "radius");
+    @include mixins.card-content(
+      map.get(maps.$padding, "x2large") map.get(maps.$padding, "xlarge"),
+      null,
+      null,
+      null
+    );
+  }
+
+  h2 {
+    font-size: map.get(maps.$h2-size, "small");
+    line-height: map.get(maps.$h2-height, "small");
+    margin-bottom: map.get(maps.$margin, "medium");
+  }
+
+  p {
+    font-size: 1.8rem;
+    margin-bottom: map.get(maps.$margin, "xlarge");
+  }
+
+  .pricing {
+    margin-bottom: map.get(maps.$margin, "xlarge");
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: map.get(maps.$margin, "medium");
+  }
+
+  .pricing__number {
+    font-size: 6.5rem;
+    font-weight: map.get(maps.$font-weights, "bold");
+    line-height: 1;
+  }
+
+  .pricing__period {
+    font-size: 2rem;
+  }
+
+  .btn__container:not(:last-child) {
+    margin-bottom: map.get(maps.$margin, "medium");
+  }
+}
+
+/*
+// T A B L E T - S M D E S K T O P
+// 620px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "tablet-sm-desktop")) {
+  .card {
+    transform: none;
+
+    &.stripe {
+      padding: 0 map.get(maps.$padding, "xlarge");
+    }
+
+    .stripe__content {
+      position: relative;
+    }
+
+    .card__content {
+      position: absolute;
+      @include mixins.card-content(
+        null,
+        -513px,
+        map.get(maps.$margin, "xlarge"),
+        350px
+      );
+    }
+
+    h2 {
+      font-size: map.get(maps.$h2-size, "medium");
+      line-height: map.get(maps.$h2-height, "medium");
+    }
+  }
+}
+
+/*
+// S M A L L   D E S K T O P
+// 768px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "small-desktop")) {
+  .card {
+    .card__content {
+      @include mixins.card-content(
+        43px map.get(maps.$padding, "x2large"),
+        -451px,
+        58px,
+        400px
+      );
+    }
+  }
+}
+
+/*
+// S M D E S K T O P - L G D E S K T O P
+// 900px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "sm-lg-desktop")) {
+  .card {
+    .card__content {
+      @include mixins.card-content(null, null, 95px, null);
+    }
+
+    h2 {
+      font-size: map.get(maps.$h2-size, "large");
+      line-height: map.get(maps.$h2-height, "large");
+      margin-bottom: map.get(maps.$margin, "large");
+    }
+
+    p {
+      font-size: 2rem;
+      line-height: 1.7;
+    }
+  }
+}
+
+/*
+// L A R G E D E S K T O P
+// 1024px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "large-desktop")) {
+  .card {
+    .card__content {
+      @include mixins.card-content(58px 55px, -510px, nullx, 446px);
+    }
+  }
+}

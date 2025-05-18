@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "../modules/variables";
+@use "../modules/maps";
+
+.stripe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 map.get(maps.$padding, "large");
+
+  .stripe__content {
+    flex-basis: variables.$max-content-width;
+  }
+}
+
+/*
+// T A B L E T - S M D E S K T O P
+// 620px
+*/
+
+@media only screen and (min-width: map.get(maps.$media-map, "tablet-sm-desktop")) {
+  .stripe {
+    padding: 0 map.get(maps.$padding, "xlarge");
+  }
+}
